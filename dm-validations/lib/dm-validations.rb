@@ -229,3 +229,7 @@ module DataMapper
     end
   end
 end # module DataMapper
+
+if defined?(I18n)
+  I18n.load_path << File.dirname(__FILE__) + '/dm-validations/locale/en.yml'
+end

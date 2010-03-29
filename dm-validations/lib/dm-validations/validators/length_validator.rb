@@ -157,7 +157,7 @@ module DataMapper
 
     module ValidatesLength
       extend Deprecate
-      
+
       # Validates that the length of the attribute is equal to, less than,
       # greater than or within a certain range (depending upon the options
       # you specify).
@@ -200,7 +200,7 @@ module DataMapper
         opts = opts_from_validator_args(fields)
         add_validator_to_context(opts, fields, DataMapper::Validate::LengthValidator)
       end
-      
+
       deprecate :validates_length, :validates_length_of
 
     end # module ValidatesLength

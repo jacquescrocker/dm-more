@@ -60,9 +60,13 @@ module DataMapper
       # @param [Symbol] field_name the name of the field that caused the error
       # @param [String] message    the message to add
       def add(field_name, message)
+
+        if message.is_a?(Symbol) && defined?(I18n)
+          message = I18n.translate(message, :scope => [:errors, :messages])
+
         # see 6abe8fff in extlib, but don't enforce
         # it unless Edge version is installed
-        if message.respond_to?(:try_call)
+        elsif message.respond_to?(:try_call)
 
           # DM resource
           message = if resource.respond_to?(:model) && resource.model.respond_to?(:properties)
