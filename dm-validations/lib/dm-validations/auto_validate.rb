@@ -156,9 +156,9 @@ module DataMapper
           when Array, Symbol
             options[:scope] = Array(value)
 
-            validates_is_unique property.name, options_with_message(options, property, :is_unique)
+            validates_uniqueness_of property.name, options_with_message(options, property, :is_unique)
           when TrueClass
-            validates_is_unique property.name, options_with_message(options, property, :is_unique)
+            validates_uniqueness_of property.name, options_with_message(options, property, :is_unique)
         end
       end
 
