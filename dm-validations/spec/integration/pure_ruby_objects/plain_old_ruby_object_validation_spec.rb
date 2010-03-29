@@ -18,7 +18,7 @@ module PureRubyObjects
       "population really needs to be specified when adding %s to encyclopedia" % [record.class.name]
     }
 
-    validates_length  :name,       :in => (4..50)
+    validates_length_of  :name,       :in => (4..50)
 
     #
     # API

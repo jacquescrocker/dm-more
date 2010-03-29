@@ -138,7 +138,7 @@ module DataMapper
           else            options[:maximum] = length
         end
 
-        validates_length property.name, options_with_message(options, property, :length)
+        validates_length_of property.name, options_with_message(options, property, :length)
       end
 
       def infer_format_validation_for(property, options)
