@@ -146,7 +146,7 @@ module DataMapper
 
         options[:with] = property.options[:format]
 
-        validates_format property.name, options_with_message(options, property, :format)
+        validates_format_of property.name, options_with_message(options, property, :format)
       end
 
       def infer_uniqueness_validation_for(property, options)
