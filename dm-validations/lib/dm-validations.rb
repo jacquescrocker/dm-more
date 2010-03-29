@@ -216,4 +216,16 @@ module DataMapper
       end
     end # module ClassMethods
   end # module Validate
+  
+  module Model
+    # @api private
+    chainable do
+      def inherited(model)
+        validators.contexts.each do |context, validators|
+          model.validators.context(context).concat(validators)
+        end
+        super
+      end
+    end
+  end
 end # module DataMapper
