@@ -13,8 +13,8 @@ module PureRubyObjects
     # Validations
     #
 
-    validates_present :name,       :when => [:default, :adding_to_encyclopedia]
-    validates_present :population, :when => :adding_to_encyclopedia, :message => Proc.new { |record|
+    validates_presence_of :name,       :when => [:default, :adding_to_encyclopedia]
+    validates_presence_of :population, :when => :adding_to_encyclopedia, :message => Proc.new { |record|
       "population really needs to be specified when adding %s to encyclopedia" % [record.class.name]
     }
 

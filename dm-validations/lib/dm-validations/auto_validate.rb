@@ -41,7 +41,7 @@ module DataMapper
       #
       #   :required => true
       #       Setting the option :required to true causes a
-      #       validates_present validator to be automatically created on
+      #       validates_presence_of validator to be automatically created on
       #       the property
       #
       #   :length => 20
@@ -127,7 +127,7 @@ module DataMapper
       def infer_presence_validation_for(property, options)
         return if skip_presence_validation?(property)
 
-        validates_present property.name, options_with_message(options, property, :presence)
+        validates_presence_of property.name, options_with_message(options, property, :presence)
       end
 
       def infer_length_validation_for(property, options)
